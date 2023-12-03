@@ -8,9 +8,12 @@ allTotal = 0
 for i in range(0,1000):#change back to 1000
     l=lines[i]
     #r=re.findall(r'\d', l)
-    r=re.findall(r'(\d|one|two|three|four|five|six|seven|eight|nine)', l)
+    r=re.findall(r'(?=(\d|one|two|three|four|five|six|seven|eight|nine))',l)
+    #(r'(\d|one|ne|two|wo|three|hree|four|five|six|seven|eight|ight|nine|ine)', l)
     print(l,r)
     last=len(r)-1
+    
+    print(i,' ', r[0], r[last])
     
     if r[0]=='one':
         r[0]='1'
